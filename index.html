@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlockVote - Student Election System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="3d-container"></div>
+    <div class="login-overlay">
+        <div class="login-container">
+            <div class="logo">
+                <h1>Block<span>Vote</span></h1>
+                <p>Secure. Transparent. Democratic.</p>
+            </div>
+            <div class="login-form">
+                <h2>Student Login</h2>
+                <div class="input-group">
+                    <label for="studentId">Student ID</label>
+                    <input type="text" id="studentId" placeholder="Enter your student ID">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password">
+                </div>
+                <button id="loginBtn" class="btn-primary">Login</button>
+                <div class="blockchain-auth">
+                    <p>Or connect with your blockchain wallet:</p>
+                    <button id="metamaskBtn" class="btn-wallet">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" alt="MetaMask" width="20"> Connect MetaMask
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

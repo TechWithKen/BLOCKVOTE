@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlockVote - Cast Your Vote</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="voting.css">
+</head>
+<body>
+    <div class="voting-container">
+        <header class="voting-header">
+            <div class="logo">
+                <h1>Block<span>Vote</span></h1>
+                <p>Your Voice Matters</p>
+            </div>
+            <div class="user-info">
+                <div class="avatar">ST</div>
+                <span class="username">Student User</span>
+                <button class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </header>
+        
+        <main class="voting-main">
+            <div class="election-info">
+                <h2 id="electionTitle">LASUSU ELECTIONS 2025</h2>
+                <p id="electionDescription">Vote for your student council representatives for the academic year 2025-2026.</p>
+                <div class="election-timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-date" id="startDate">JUL 1, 2025</span>
+                        <span class="timeline-label">Starts</span>
+                    </div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-item current">
+                        <span class="timeline-date" id="currentDate">JULY 20, 2025</span>
+                        <span class="timeline-label">Voting Open</span>
+                    </div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-item">
+                        <span class="timeline-date" id="endDate">JUL 31, 2025</span>
+                        <span class="timeline-label">Ends</span>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="votingProgress"></div>
+                    <span class="progress-text" id="progressText">11 days remaining</span>
+                </div>
+            </div>
+
+            <!-- Category Navigation -->
+            <div class="category-navigation">
+                <div class="category-nav-title">
+                    <i class="fas fa-vote-yea"></i>
+                    Election Categories
+                </div>
+                <div class="category-tabs">
+                    <button class="category-tab active" data-category="president">President</button>
+                    <button class="category-tab" data-category="vice-president">Vice President</button>
+                    <button class="category-tab" data-category="general-secretary">General Secretary</button>
+                    <button class="category-tab" data-category="asst-general-secretary">Asst. General Secretary</button>
+                    <button class="category-tab" data-category="treasurer">Treasurer</button>
+                    <button class="category-tab" data-category="financial-secretary">Financial Secretary</button>
+                    <button class="category-tab" data-category="welfare-director">Welfare Director</button>
+                </div>
+            </div>
+
+            <!-- Category Contents -->
+            <div id="president" class="category-content active">
+                <div class="category-header">
+                    <h3 class="category-title">Presidential Candidates</h3>
+                    <p class="category-description">Choose your next Student Union President who will lead and represent all students.</p>
+                </div>
+                <div class="candidates-grid">
+                    <div class="candidate-card">
+                        <div class="vote-status"><i class="fas fa-check"></i></div>
+                        <div class="candidate-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="candidate-name">Kehinde Ajasa</h3>
+                        <p class="candidate-position">President</p>
+                        <p class="candidate-bio">4th year Computer Science student with leadership experience in student government and tech innovation projects.</p>
+                        <button class="btn-vote" data-candidate="Kehinde Ajasa" data-position="President">Vote</button>
+                    </div>
+                    
+                    <div class="candidate-card">
+                        <div class="vote-status"><i class="fas fa-check"></i></div>
+                        <div class="candidate-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="candidate-name">Funmi Olamide</h3>
+                        <p class="candidate-position">President</p>
+                        <p class="candidate-bio">3rd year Law student passionate about student rights and academic excellence initiatives.</p>
+                        <button class="btn-vote" data-candidate="Funmi Olamide" data-position="President">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="vice-president" class="category-content">
+                <div class="category-header">
+                    <h3 class="category-title">Vice Presidential Candidates</h3>
+                    <p class="category-description">Select your Vice President who will support the President and lead special initiatives.</p>
+                </div>
+                <div class="candidates-grid">
+                    <div class="candidate-card">
+                        <div class="vote-status"><i class="fas fa-check"></i></div>
+                        <div class="candidate-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="candidate-name">Adeoye Adeseni</h3>
+                        <p class="candidate-position">Vice President</p>
+                        <p class="candidate-bio">3rd year Business Administration student passionate about student welfare and campus development.</p>
+                        <button class="btn-vote" data-candidate="Adeoye Adeseni" data-position="Vice President">Vote</button>
+                    </div>
+                    
+                    <div class="candidate-card">
+                        <div class="vote-status"><i class="fas fa-check"></i></div>
+                        <div class="candidate-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="candidate-name">Blessing Okoro</h3>
+                        <p class="candidate-position">Vice President</p>
+                        <p class="candidate-bio">4th year Engineering student with experience in project management and student advocacy.</p>
+                        <button class="btn-vote" data-candidate="Blessing Okoro" data-position="Vice President">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="general-secretary" class="category-content">
+                <div class="category-header">
+                    <h3 class="category-title">General Secretary Candidates</h3>
+                    <p class="category-description">Choose your General Secretary who will manage records and coordinate union activities.</p>
+                </div>
+                <div class="candidates-grid">
+                    <div class="candidate-card">
+                        <div class="vote-status"><i class="fas fa-check"></i></div>
+                        <div class="candidate-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="candidate-name">Ibrahim Lawal</h3>
+                        <p class="candidate-position">General Secretary</p>
+                        <p class="candidate-bio">2nd year Mass Communication student with excellent organizational and communication skills.</p>
+                        <button class="btn-vote" data-candidate="Ibrahim Lawal" data-position="General Secretary">Vote</button>
+                    </div>
+                    
+                    <div class="candidate-card">
+                        <div class="vote-status"><i class="fas fa-check"></i></div>
+                        <div class="candidate-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="candidate-name">Chioma Nwankwo</h3>
+                        <p class="candidate-position">General Secretary</p>
+                        <p class="candidate-bio">3rd year English student with strong writing skills and administrative experience.</p>
+                        <button class="btn-vote" data-candidate="Chioma Nwankwo" data-position="General Secretary">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="asst-general-secretary" class="category-content">
+                <div class="category-header">
+                    <h3 class="category-title">Assistant General Secretary Candidates</h3>
+                    <p class="category-description">Select your Assistant General Secretary who will support documentation and communication.</p>
+                </div>
+                <div class="candidates-grid">
+                    <div class="candidate-card">
+                        <div class="vote-status"><i class="fas fa-check"></i></div>
+                        <div class="candidate-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="candidate-name">Tunde Adebayo</h3>
+                        <p class="candidate-position">Asst. General Secretary</p>
+                        <p class="candidate-bio">2nd year Political Science student dedicated to transparent governance and student engagement.</p>
+                        <button class="btn-vote" data-candidate="Tunde Adebayo" data-position="Asst. General Secretary">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="treasurer" class="category-content">
+                <div class="category-header">
+                    <h3 class="category-title">Treasurer Candidates</h3>
+                    <p class="category-description">Choose your Treasurer who will manage the union's finances and budget.</p>
+                </div>
+                <div class="candidates-grid">
+                    <div class="candidate-card">
+                        <div class="vote-status"><i class="fas fa-check"></i></div>
+                        <div class="candidate-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="candidate-name">Fatima Bello</h3>
+                        <p class="candidate-position">Treasurer</p>
+                        <p class="candidate-bio">4th year Accounting student with experience in financial management and budget planning.</p>
+                        <button class="btn-vote" data-candidate="Fatima Bello" data-position="Treasurer">Vote</button>
+                    </div>
+                    
+                    <div class="candidate-card">
+                        <div class="vote-status"><i class="fas fa-check"></i></div>
+                        <div class="candidate-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="candidate-name">David Okafor</h3>
+                        <p class="candidate-position">Treasurer</p>
+                        <p class="candidate-bio">3rd year Economics student with strong analytical skills and financial expertise.</p>
+                        <button class="btn-vote" data-candidate="David Okafor" data-position="Treasurer">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="financial-secretary" class="category-content">
+                <div class="category-header">
+                    <h3 class="category-title">Financial Secretary Candidates</h3>
+                    <p class="category-description">Select your Financial Secretary who will assist with financial records and transactions.</p>
+                </div>
+                <div class="candidates-grid">
+                    <div class="candidate-card">
+                        <div class="vote-status"><i class="fas fa-check"></i></div>
+                        <div class="candidate-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="candidate-name">Aisha Mohammed</h3>
+                        <p class="candidate-position">Financial Secretary</p>
+                        <p class="candidate-bio">2nd year Banking & Finance student with meticulous attention to detail and record keeping.</p>
+                        <button class="btn-vote" data-candidate="Aisha Mohammed" data-position="Financial Secretary">Vote</button>
+                    </div>
+
+                    <div class="candidate-card">
+                        <div class="vote-status"><i class="fas fa-check"></i></div>
+                        <div class="candidate-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="candidate-name">Samuel Ojo</h3>
+                        <p class="candidate-position">Financial Secretary</p>
+                        <p class="candidate-bio">3rd year Business Administration student with experience in financial documentation.</p>
+                        <button class="btn-vote" data-candidate="Samuel Ojo" data-position="Financial Secretary">Vote</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="welfare-director" class="category-content">
+                <div class="category-header">
+                    <h3 class="category-title">Welfare Director Candidates</h3>
+                    <p class="category-description">Choose your Welfare Director who will focus on student well-being and campus life improvement.</p>
+                </div>
+                <div class="candidates-grid">
+                    <div class="candidate-card">
+                        <div class="vote-status"><i class="fas fa-check"></i></div>
+                        <div class="candidate-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="candidate-name">Grace Emeka</h3>
+                        <p class="candidate-position">Welfare Director</p>
+                        <p class="candidate-bio">3rd year Psychology student passionate about mental health and student support services.</p>
+                        <button class="btn-vote" data-candidate="Grace Emeka" data-position="Welfare Director">Vote</button>
+                    </div>
+
+                    <div class="candidate-card">
+                        <div class="vote-status"><i class="fas fa-check"></i></div>
+                        <div class="candidate-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="candidate-name">Michael Adamu</h3>
+                        <p class="candidate-position">Welfare Director</p>
+                        <p class="candidate-bio">4th year Sociology student with experience in community outreach and welfare programs.</p>
+                        <button class="btn-vote" data-candidate="Michael Adamu" data-position="Welfare Director">Vote</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="voting-confirmation" id="confirmationModal">
+                <div class="confirmation-content">
+                    <h3>Confirm Your Vote</h3>
+                    <p>You are about to vote for <span id="selectedCandidate">John Doe</span> as <span id="selectedPosition">President</span>.</p>
+                    <p class="warning-text">This action cannot be undone. Are you sure?</p>
+                    <div class="confirmation-actions">
+                        <button class="btn-secondary" id="cancelVote">Cancel</button>
+                        <button class="btn-primary" id="confirmVote">Confirm Vote</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="voting-success" id="successModal">
+                <div class="success-content">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Vote Submitted Successfully!</h3>
+                    <p>Your vote has been recorded on the blockchain.</p>
+                    <p class="transaction-hash">
+                        Transaction: <span id="txHash">0x4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6</span>
+                    </p>
+                    <button class="btn-primary" id="viewReceipt">View Receipt</button>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="voting-footer">
+            <p>Powered by Blockchain Technology | Secure • Transparent • Trustworthy</p>
+            <div class="blockchain-status">
+                <i class="fas fa-link"></i>
+                <span>Connected to Ethereum Network</span>
+            </div>
+        </footer>
+
+        <!-- Trust Badge -->
+        <div class="trust-badge">
+            <i class="fas fa-shield-alt"></i>
+            Blockchain Secured
+        </div>
+    </div>
+    
+    <script src="voting.js"></script>
+</body>
+</html>

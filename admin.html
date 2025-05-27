@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlockVote - Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>Block<span>Vote</span></h1>
+                <p>Admin Dashboard</p>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="active"><a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="#elections"><i class="fas fa-vote-yea"></i> Elections</a></li>
+                    <li><a href="#candidates"><i class="fas fa-users"></i> Candidates</a></li>
+                    <li><a href="#students"><i class="fas fa-user-graduate"></i> Students</a></li>
+                    <li><a href="#results"><i class="fas fa-chart-bar"></i> Results</a></li>
+                    <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar">AD</div>
+                <div class="user-info">
+                    <span class="username">Admin User</span>
+                    <span class="role">Administrator</span>
+                </div>
+                <button class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <header class="header">
+                <h2>Election Management</h2>
+                <div class="header-actions">
+                    <button class="btn-primary" id="createElectionBtn">
+                        <i class="fas fa-plus"></i> Create Election
+                    </button>
+                </div>
+            </header>
+            
+            <section class="content-section">
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-icon bg-primary">
+                            <i class="fas fa-vote-yea"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Active Elections</h3>
+                            <p id="activeElections">5</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon bg-success">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total Candidates</h3>
+                            <p id="totalCandidates">32</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon bg-warning">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Registered Students</h3>
+                            <p id="registeredStudents">1,245</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon bg-info">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Average Participation</h3>
+                            <p id="avgParticipation">78%</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="elections-table">
+                    <div class="table-header">
+                        <h3>Current Elections</h3>
+                        <div class="table-actions">
+                            <input type="text" placeholder="Search elections..." class="search-input">
+                            <button class="btn-secondary"><i class="fas fa-filter"></i> Filter</button>
+                        </div>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Election Name</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Candidates</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="electionsTableBody">
+                            <!-- Elections will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Create Election Modal -->
+    <div class="modal" id="createElectionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create New Election</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="electionForm">
+                    <div class="form-group">
+                        <label for="electionName">Election Name</label>
+                        <input type="text" id="electionName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="electionDescription">Description</label>
+                        <textarea id="electionDescription" rows="3" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="startDate">Start Date</label>
+                            <input type="datetime-local" id="startDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="endDate">End Date</label>
+                            <input type="datetime-local" id="endDate" required>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary close-modal">Cancel</button>
+                        <button type="submit" class="btn-primary">Create Election</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="admin.js"></script>
+</body>
+</html>
