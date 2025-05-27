@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlockVote - Meet the Candidates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+    <link rel="stylesheet" href="candidate.css">
+</head>
+<body>
+    <div class="candidates-container">
+        <header class="candidates-header">
+            <div class="header-left">
+                <div class="logo">
+                    <i class="fas fa-vote-yea"></i>
+                    <h1>Block<span>Vote</span></h1>
+                </div>
+                <h2>2023 Student Union Candidates</h2>
+            </div>
+            <div class="header-right">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search candidates...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-controls">
+                    <select id="positionFilter">
+                        <option value="">All Positions</option>
+                        <option value="president">President</option>
+                        <option value="vice_president">Vice President</option>
+                        <option value="secretary">General Secretary</option>
+                        <option value="treasurer">Treasurer</option>
+                    </select>
+                    <select id="departmentFilter">
+                        <option value="">All Departments</option>
+                        <option value="computer_science">Computer Science</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="business">Business</option>
+                        <option value="law">Law</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <main class="candidates-main">
+            <aside class="positions-sidebar">
+                <h3><i class="fas fa-list-ol"></i> Election Positions</h3>
+                <ul class="position-list" id="positionList">
+                    <!-- Dynamically populated -->
+                </ul>
+            </aside>
+
+            <section class="candidates-grid" id="candidatesGrid">
+                <!-- Dynamically populated -->
+            </section>
+        </main>
+
+        <div class="candidate-modal" id="candidateModal">
+            <div class="modal-content">
+                <button class="close-modal">&times;</button>
+                <div class="modal-body" id="modalBody">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="candidate.js"></script>
+</body>
+</html>
