@@ -99,6 +99,11 @@ body {
     transform: scale(1.1);
     color: var(--accent-color);
 }
+#homeBtn{
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+}
 
 /* Main Content Styles */
 .voting-main {

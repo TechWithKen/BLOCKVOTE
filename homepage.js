@@ -81,3 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Run on scroll
     window.addEventListener('scroll', animateOnScroll);
 });
+
+document.getElementById("homeBtn").addEventListener("click", function() {
+    window.location.href = "home.html";
+});

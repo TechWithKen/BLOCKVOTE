@@ -219,3 +219,11 @@ document.addEventListener('DOMContentLoaded', function () {
         progressText.textContent = `${totalCategories - voteCount} categories remaining`;
     }
 });
+
+
+document.getElementById("logbtn").addEventListener("click", function() {
+    window.location.href = "index.html";
+});
+document.getElementById("homeBtn").addEventListener("click", function() {
+    window.location.href = "home.html";
+});

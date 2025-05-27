@@ -87,10 +87,21 @@ a:hover {
     background: var(--primary-color);
     color: white;
 }
+.btn-secondary{
+    background: white;
+    color: var(--primary-color);
+}
 
+.btn-secondary:hover{
+    background: transparent;
+    border-color: white;
+    color: white;
+}
 .btn-primary:hover {
-    background: var(--primary-dark);
+    background: transparent;
+    border-color: var(--primary-color);
     transform: translateY(-2px);
+    color: var(--primary-color);
     box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
 }
 
@@ -100,8 +111,8 @@ a:hover {
     color: var(--primary-color);
 }
 
-.btn-outline:hover {
-    background: var(--primary-color);
+.btn-outline:hover a li{
+    text-decoration: none;
     color: white;
     transform: translateY(-2px);
 }
@@ -110,7 +121,11 @@ a:hover {
     padding: 0.9rem 2rem;
     font-size: 1.1rem;
 }
-
+#homeBtn{
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+}
 /* Navigation */
 .navbar {
     position: fixed;
