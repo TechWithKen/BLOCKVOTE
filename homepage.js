@@ -85,3 +85,4 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById("homeBtn").addEventListener("click", function() {
     window.location.href = "home.html";
 });
+
