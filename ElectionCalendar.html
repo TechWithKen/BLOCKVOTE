@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Calendar | BlockVote</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@5.11.3/main.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@5.11.3/main.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/list@5.11.3/main.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-vote-yea"></i>
+                <h1>Block<span>Vote</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="home.html#features">Features</a></li>
+                <li><a href="home.html#how-it-works">How It Works</a></li>
+                <li><a href="ElectionCalendar.html" class="active">Election Calendar</a></li>
+                <li><a href="candidate.html">Candidates</a></li>
+                <li><a href="register.html" class="btn btn-outline">Register</a></li>
+                <li><a href="login.html" class="btn btn-primary">Login</a></li>
+            </ul>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Election Calendar</h1>
+            <p>Stay informed about upcoming elections, important dates, and deadlines</p>
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section class="calendar-section">
+        <div class="container">
+            <div class="calendar-options">
+                <div class="view-toggle">
+                    <button id="month-view" class="btn btn-outline active">
+                        <i class="fas fa-calendar-alt"></i> Month
+                    </button>
+                    <button id="list-view" class="btn btn-outline">
+                        <i class="fas fa-list"></i> List
+                    </button>
+                </div>
+                <div class="calendar-filter">
+                    <select id="election-filter" class="form-select">
+                        <option value="all">All Elections</option>
+                        <option value="student-union">Student Union</option>
+                        <option value="department">Departmental</option>
+                        <option value="sports">Sports Council</option>
+                        <option value="societies">Societies</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="calendar"></div>
+            
+            <div class="upcoming-elections">
+                <h3>Upcoming Elections</h3>
+                <div class="election-cards">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Election Types Section -->
+    <section class="election-types">
+        <div class="container">
+            <h2 class="section-title">Types of Elections</h2>
+            <p class="section-subtitle">Participate in various student elections throughout the academic year</p>
+            
+            <div class="types-grid">
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Student Union</h3>
+                    <p>Elect your student representatives who will voice your concerns to the university administration.</p>
+                    <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Departmental</h3>
+                    <p>Vote for department-specific positions like course representatives and faculty board members.</p>
+                    <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <h3>Sports Council</h3>
+                    <p>Choose leaders for your sports clubs and athletic associations.</p>
+                    <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Societies</h3>
+                    <p>Elect committee members for student societies and special interest groups.</p>
+                    <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Participate in Elections?</h2>
+            <p>Register now to vote in upcoming elections or nominate yourself as a candidate.</p>
+            <div class="cta-buttons">
+                <a href="register.html" class="btn btn-primary btn-lg">Register Now</a>
+                <a href="candidates.html" class="btn btn-outline btn-lg">View Candidates</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-vote-yea"></i>
+                        <h1>Block<span>Vote</span></h1>
+                    </div>
+                    <p>Secure, transparent student elections powered by blockchain technology.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#how-it-works">How It Works</a></li>
+                        <li><a href="election-calendar.html">Election Calendar</a></li>
+                        <li><a href="candidates.html">Meet Candidates</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Voter Guide</a></li>
+                        <li><a href="election-calendar.html">Election Calendar</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Whitepaper</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 BlockVote. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Accessibility</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">For Administrators</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@5.11.3/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@5.11.3/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/list@5.11.3/main.min.js"></script>
+    <script src="homepage.js"></script>
+    <script src="ElectionCalendar.js"></script>
+</body>
+</html>
