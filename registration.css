@@ -60,7 +60,12 @@ body {
 .registration-header .logo span {
     color: var(--primary-color);
 }
-
+.fa-arrow-right{
+    font-size: 1.5em;
+}
+.fa-arrow-left{
+    font-size: 1.5em;
+}
 .registration-header p {
     color: var(--gray-color);
 }
@@ -238,18 +243,7 @@ body {
     border-color: var(--primary-color);
 }
 
-.radio-checkmark::after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--primary-color);
-    opacity: 0;
-    transition: all 0.3s ease;
-}
+
 
 .radio-option input:checked ~ .radio-checkmark::after {
     opacity: 1;
@@ -418,7 +412,9 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
+    padding: 0.5em;
+    border-radius: 1rem;
     color: white;
     border: none;
 }
