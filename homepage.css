@@ -150,17 +150,18 @@ a:hover {
     gap: 0.5rem;
 }
 
-.logo i {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-}
-
 .logo h1 {
     font-size: 1.5rem;
 }
 
 .logo span {
     color: var(--primary-color);
+}
+
+.logo img {
+    height: 2rem; /* This matches the approximate height of the h1 text */
+    width: auto; /* Maintains aspect ratio */
+    object-fit: contain; /* Ensures the image scales properly */
 }
 
 .nav-links {

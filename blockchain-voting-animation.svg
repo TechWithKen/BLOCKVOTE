@@ -1,0 +1,242 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients for 3D effects -->
+    <linearGradient id="boxTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4361ee;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3a0ca3;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="boxSide" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3a0ca3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#240046;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="boxFront" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4cc9f0;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#4361ee;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <linearGradient id="voteGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f72585;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b5179e;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="glowEffect" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#4cc9f0;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#4cc9f0;stop-opacity:0" />
+    </radialGradient>
+    
+    <radialGradient id="networkGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#2ecc71;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Filter for drop shadow -->
+    <filter id="dropshadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="4" result="offset" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circles for depth -->
+  <circle cx="150" cy="150" r="100" fill="url(#glowEffect)" opacity="0.3">
+    <animate attributeName="r" values="80;120;80" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.1;0.3;0.1" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="650" cy="450" r="80" fill="url(#networkGlow)" opacity="0.2">
+    <animate attributeName="r" values="60;100;60" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.1;0.2;0.1" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Main ballot box container -->
+  <g id="ballotBox" transform="translate(300, 200)">
+    <!-- Box base (back face) -->
+    <polygon points="0,120 120,120 140,100 20,100" fill="url(#boxSide)" opacity="0.8"/>
+    
+    <!-- Box base (right side) -->
+    <polygon points="120,120 140,100 140,20 120,40" fill="url(#boxSide)" opacity="0.6"/>
+    
+    <!-- Box base (front face) -->
+    <rect x="0" y="40" width="120" height="80" fill="url(#boxFront)" filter="url(#dropshadow)"/>
+    
+    <!-- Box lid (animated) -->
+    <g id="lid">
+      <polygon points="0,40 120,40 140,20 20,20" fill="url(#boxTop)" filter="url(#dropshadow)">
+        <animateTransform 
+          attributeName="transform" 
+          type="rotate" 
+          values="0 60 20; -45 60 20; 0 60 20" 
+          dur="8s" 
+          repeatCount="indefinite"/>
+      </polygon>
+    </g>
+    
+    <!-- Voting slot -->
+    <rect x="45" y="35" width="30" height="3" fill="#240046" rx="1">
+      <animate attributeName="fill" values="#240046;#4cc9f0;#240046" dur="8s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Lock icon on the box -->
+    <g transform="translate(50, 80)">
+      <rect x="5" y="8" width="10" height="8" fill="none" stroke="#2ecc71" stroke-width="1.5" rx="2"/>
+      <rect x="3" y="12" width="14" height="10" fill="#2ecc71" rx="2"/>
+      <circle cx="10" cy="16" r="1.5" fill="#ffffff"/>
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+    </g>
+  </g>
+  
+  <!-- Voting paper (animated) -->
+  <g id="votePaper">
+    <rect x="355" y="150" width="20" height="25" fill="url(#voteGradient)" rx="2" filter="url(#glow)">
+      <animate attributeName="y" values="150;280;150" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0.8;0" dur="8s" repeatCount="indefinite"/>
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        values="0 365 162; 15 365 162; 0 365 162" 
+        dur="8s" 
+        repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Vote checkmark -->
+    <path d="M360 160 L363 163 L370 156" stroke="white" stroke-width="2" fill="none">
+      <animate attributeName="opacity" values="0;1;0.8;0" dur="8s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Blockchain network nodes -->
+  <g id="networkNodes">
+    <!-- Node 1 -->
+    <circle cx="150" cy="100" r="8" fill="#2ecc71" filter="url(#glow)">
+      <animate attributeName="r" values="6;12;6" dur="3s" repeatCount="indefinite" begin="0s"/>
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" begin="0s"/>
+    </circle>
+    
+    <!-- Node 2 -->
+    <circle cx="650" cy="150" r="8" fill="#2ecc71" filter="url(#glow)">
+      <animate attributeName="r" values="6;12;6" dur="3s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    
+    <!-- Node 3 -->
+    <circle cx="100" cy="400" r="8" fill="#2ecc71" filter="url(#glow)">
+      <animate attributeName="r" values="6;12;6" dur="3s" repeatCount="indefinite" begin="2s"/>
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+    
+    <!-- Node 4 -->
+    <circle cx="700" cy="400" r="8" fill="#2ecc71" filter="url(#glow)">
+      <animate attributeName="r" values="6;12;6" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    
+    <!-- Node 5 -->
+    <circle cx="400" cy="500" r="8" fill="#2ecc71" filter="url(#glow)">
+      <animate attributeName="r" values="6;12;6" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+  </g>
+  
+  <!-- Connection lines between nodes (blockchain network) -->
+  <g id="connections" stroke="#4cc9f0" stroke-width="1" opacity="0.6">
+    <line x1="150" y1="100" x2="360" y2="220">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="4s" repeatCount="indefinite"/>
+    </line>
+    <line x1="650" y1="150" x2="360" y2="220">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="4s" repeatCount="indefinite" begin="1s"/>
+    </line>
+    <line x1="100" y1="400" x2="360" y2="220">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="4s" repeatCount="indefinite" begin="2s"/>
+    </line>
+    <line x1="700" y1="400" x2="360" y2="220">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="4s" repeatCount="indefinite" begin="0.5s"/>
+    </line>
+    <line x1="400" y1="500" x2="360" y2="220">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="4s" repeatCount="indefinite" begin="1.5s"/>
+    </line>
+  </g>
+  
+  <!-- Data packets traveling along connections -->
+  <g id="dataPackets">
+    <circle r="3" fill="#f72585" filter="url(#glow)">
+      <animateMotion dur="5s" repeatCount="indefinite">
+        <path d="M 360 220 Q 255 160 150 100"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle r="3" fill="#f72585" filter="url(#glow)">
+      <animateMotion dur="5s" repeatCount="indefinite" begin="1s">
+        <path d="M 360 220 Q 505 185 650 150"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    
+    <circle r="3" fill="#f72585" filter="url(#glow)">
+      <animateMotion dur="5s" repeatCount="indefinite" begin="2s">
+        <path d="M 360 220 Q 230 310 100 400"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+  </g>
+  
+  <!-- Security shields around the network -->
+  <g id="securityShields" opacity="0.3">
+    <circle cx="360" cy="220" r="80" fill="none" stroke="#2ecc71" stroke-width="2" stroke-dasharray="5,5">
+      <animate attributeName="r" values="80;100;80" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="360" cy="220" r="120" fill="none" stroke="#4cc9f0" stroke-width="1" stroke-dasharray="3,7">
+      <animate attributeName="r" values="120;140;120" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-dashoffset" values="0;-30" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Floating text labels -->
+  <g id="labels" font-family="Arial, sans-serif" font-size="12" font-weight="bold">
+    <text x="280" y="320" fill="#4361ee" opacity="0.8">SECURE</text>
+    <text x="320" y="340" fill="#2ecc71" opacity="0.8">VERIFIED</text>
+    <text x="380" y="320" fill="#f72585" opacity="0.8">TRANSPARENT</text>
+    
+    <animateTransform 
+      attributeName="transform" 
+      type="translate" 
+      values="0,0; 0,-5; 0,0" 
+      dur="3s" 
+      repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Particles for extra visual appeal -->
+  <g id="particles">
+    <circle cx="200" cy="300" r="1" fill="#4cc9f0">
+      <animate attributeName="cy" values="300;100;300" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="450" r="1" fill="#f72585">
+      <animate attributeName="cy" values="450;250;450" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="350" r="1" fill="#2ecc71">
+      <animate attributeName="cy" values="350;150;350" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

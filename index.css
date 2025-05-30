@@ -3,7 +3,8 @@
     --secondary-color: #8f94fb;
     --accent-color: #00b4d8;
     --dark-color: #1a1a2e;
-    --light-color: #f8f9fa;
+    --light-color: #4361ee;
+    
     --success-color: #38b000;
     --warning-color: #ffaa00;
     --danger-color: #d00000;
@@ -42,7 +43,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(26, 26, 46, 0.5);
+    background: rgba(242, 242, 246, 0.5);
     backdrop-filter: blur(5px);
 }
 
@@ -73,11 +74,11 @@ body {
 
 .logo p {
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--light-color);
 }
 
 .login-form {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.071);
     padding: 2.5rem;
     border-radius: 15px;
     width: 100%;
@@ -106,12 +107,12 @@ body {
 .input-group input {
     width: 100%;
     padding: 0.8rem 1rem;
-    border: none;
+    border-color: var(--light-color);
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.1);
     color: var(--light-color);
     font-size: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid;
     transition: all 0.3s ease;
 }
 
@@ -123,7 +124,7 @@ body {
 }
 
 .input-group input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--light-color);
 }
 
 .btn-primary {
@@ -153,7 +154,7 @@ body {
 }
 
 .blockchain-auth p {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--light-color);
     margin-bottom: 1rem;
     font-size: 0.9rem;
 }
@@ -165,11 +166,12 @@ body {
     gap: 0.5rem;
     width: 100%;
     padding: 0.8rem;
-    border: none;
+    border: 1px solid;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.1);
-    color: white;
+    color: var(--light-color);
     font-size: 1rem;
+    border-color: var(--light-color);
     cursor: pointer;
     transition: all 0.3s ease;
 }
