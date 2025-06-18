@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     connectWalletBtn.addEventListener('click', connectWallet);
     sendCodeBtn.addEventListener('click', sendVerificationCode);
     fileInput.addEventListener('change', handleFileUpload);
+
     
     // Functions
     function updateFormNavigation() {
@@ -176,6 +177,14 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('summaryWalletAddress').textContent = walletAddress;
         }
     }
+    document.querySelector('form').addEventListener('submit', function (e) {
+    if (!fileInput.value) {
+      e.preventDefault(); // Prevent form submission
+      fileUploadDiv.classList.add('invalid');
+    } else {
+      fileUploadDiv.classList.remove('invalid');
+    }
+  });
     
     function submitForm(e) {
         e.preventDefault();

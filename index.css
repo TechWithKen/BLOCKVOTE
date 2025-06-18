@@ -96,6 +96,21 @@ body {
 .input-group {
     margin-bottom: 1.5rem;
 }
+.forgot-password{
+  display: inline-block;
+  font-style: italic;
+  text-align: center;
+  margin-top: none;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
 
 .input-group label {
     display: block;
